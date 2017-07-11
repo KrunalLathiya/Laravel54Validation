@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Item;
 
 class ItemController extends Controller
 {
@@ -38,6 +39,12 @@ class ItemController extends Controller
         'name' => 'required|max:10',
         'price' => 'required',
         ]);
+
+        Item::create([
+          'name' => $request->get('name'),
+          'price'=> $request->get('price')
+        ]);
+        return back()->with('success', 'You have just created one item');
     }
 
     /**

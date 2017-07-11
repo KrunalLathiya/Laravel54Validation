@@ -17,11 +17,16 @@
               </ul>
           </div>
         @endif
+        @if (\Session::get('success'))
+            <div class="alert alert-success">
+                <p>{{ \Session::get('success') }}</p>
+            </div>
+          @endif
       <form method="post" action="{{url('items/add')}}">
         {{csrf_field()}}
         <div class="form-group">
           <label for="itemName">Item Name:</label>
-          <input type="text" class="form-control" id="itemName" name="itemName">
+          <input type="text" class="form-control" id="itemName" name="name">
         </div>
         <div class="form-group">
           <label for="price">Price:</label>
