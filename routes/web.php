@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('items/add', 'ItemController@create');
 Route::post('items/add', 'ItemController@store');
+
+Route::get('formitem/add', 'FormController@create');
+Route::post('formitem/add', 'FormController@store');
